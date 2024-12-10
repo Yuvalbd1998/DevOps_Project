@@ -1,0 +1,11 @@
+
+# Ignore Docker volumes and temporary files
+jenkins_home/
+__pycache__/
+*.log
+*.tar.gz
+
+# Ignore temporary files and system files
+.DS_Store
+.idea/
+*.swp

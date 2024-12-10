@@ -1,0 +1,26 @@
+
+pipeline {
+    agent { label 'worker-1' }
+    stages {
+        stage('Checkout') {
+            steps {
+                checkout scm
+            }
+        }
+        stage('Static Analysis') {
+            steps {
+                sh 'flake8 .'
+            }
+        }
+        stage('Build and Run') {
+            steps {
+                sh 'docker-compose up --build -d'
+            }
+        }
+        stage('Test') {
+            steps {
+                sh 'curl -f http://localhost:8000 || exit 1'
+            }
+        }
+    }
+}
