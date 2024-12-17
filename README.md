@@ -70,6 +70,3 @@ This project demonstrates a DevOps pipeline using Jenkins. It includes:
   docker logs <jenkins-container-id>
   ```
 - **Worker node not connecting**: Verify the `JENKINS_SECRET` and `JENKINS_URL` in the `docker-compose.yml`.
-
-## License
-This project is licensed under MIT License.
